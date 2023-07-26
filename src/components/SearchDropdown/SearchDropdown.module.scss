@@ -1,0 +1,49 @@
+.dropdownBlock {
+    & ul {
+        & p {
+            color: #fff;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            // transition: all 0.5s;
+        }
+
+        & li {
+            padding: 7px;
+            border-radius: 7px;
+            border: 1px solid transparent;
+            transition: all 0.3s;
+
+            &:hover {
+                transition: all 0.3s;
+                // box-sizing: content-box;
+                border: 1px solid rgb(0, 0, 0);
+                background-color: #6100bc81;
+            }
+        }
+    }
+}
+
+.descriptionBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.subtitle {
+    font-size: 13px;
+}
+
+.filmBlock {
+    display: flex;
+    gap: 10px;
+}
+
+.notFounded {
+    width: fit-content;
+    height: 430px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

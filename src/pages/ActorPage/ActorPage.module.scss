@@ -1,0 +1,123 @@
+.actorBlock {
+    &__header {
+        padding: 20px 60px;
+        margin-bottom: 10px;
+
+        &__rightPart {
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+        }
+
+        @media screen and (max-width:800px) {
+            padding: 5px;
+        }
+
+        &__wrapper {
+            width: fit-content;
+            margin: 0 auto;
+            display: flex;
+            gap: 100px;
+            align-items: center;
+
+            @media screen and (max-width:700px) {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+
+        & h1 {
+            font-size: 55px;
+            font-weight: normal;
+        }
+
+        & h2 {
+            font-size: 25px;
+            font-weight: normal;
+        }
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+.professionBlock {
+    border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+
+    &__list {
+
+        border: 1px solid red;
+        display: flex;
+
+        & p {
+            
+        }
+    }
+}
+
+// .actorsProfession{
+//     border: 1px solid red;
+// }
+
+.image {
+    border-radius: 20px;
+}
+
+.professionList {
+    // border: 1px solid red;
+}
+
+.actorsFilmsBlock {
+    // border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    &__wrapper {
+        border: 7px solid rgb(0, 0, 63);
+        border-radius: 30px;
+        padding: 10px 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__list {
+        // border: 1px solid red;
+        // display: flex;
+
+    }
+
+    &__listItem {
+        // border: 1px solid red;
+        display: inline-block;
+
+        & p {
+            color: rgb(81, 81, 99);
+
+            &:hover {
+                transition: all 0.5s;
+                color: rgb(15, 72, 165);
+            }
+        }
+    }
+}
+
+.textHidden {
+    height: 100px;
+    border: 1px solid red;
+    overflow: hidden;
+    margin-bottom: 800px;
+    transition: height 1s;
+
+    &:hover {
+        transition: all 1s;
+        height: fit-content;
+        // height: 300px;
+    }
+}

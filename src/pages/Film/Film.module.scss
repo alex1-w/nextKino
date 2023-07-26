@@ -1,0 +1,174 @@
+.posterBlock {
+    align-self: start;
+    margin-top: 30px;
+    // width: 20vw;
+    // height: 70vh;
+    width: 450px;
+    height: 570px;
+    position: relative;
+
+    @media screen and (max-width:1300px) {
+        width: 360px;
+        height: 490px;
+    }
+
+    @media screen and (max-width:1150px) {
+        width: 210px;
+        height: 300px;
+    }
+
+    &__image {}
+}
+
+.filmBlock {
+    display: flex;
+    gap: 70px;
+    width: fit-content;
+    margin: 0 auto;
+
+    &__head {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // justify-content: space-between;
+        gap: 20px;
+    }
+
+    &__posterBlock {}
+
+    &__aboutFilmBlock {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        &__rating {
+            width: fit-content;
+            padding: 12px;
+            border-radius: 10px;
+            // border: 3px solid rgb(4, 0, 74);
+            background-color: rgba(0, 2, 18, 0.566);
+            box-shadow: 1px 1px 8px 0px rgba(34, 60, 80, 0.564);
+            font-size: 20px;
+            height: fit-content;
+            color: white;
+
+            span {
+                margin: 0 10px;
+                border: 1.3px solid white;
+            }
+        }
+    }
+}
+
+.filmStaffs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 20px;
+    // width: fit-content;
+    // max-width: 700px;
+
+    @media screen and (max-width:1200px) {
+        width: 500px;
+    }
+
+    @media screen and (max-width:1100px) {
+        gap: 5px;
+        font-size: 15px;
+    }
+}
+
+.filmDescription {
+    font-size: 22px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+
+    & h2 {
+        align-self: center;
+    }
+}
+
+.subtitle,
+.descriptionContent,
+.rating {
+    font-size: 25px;
+}
+
+.staffNames {
+    font-size: 20px;
+}
+
+.title {
+    color: rgb(255, 197, 121);
+    font-weight: 600;
+    font-size: 40px;
+
+    @media screen and (max-width:1100px) {
+        font-size: 30px;
+    }
+}
+
+.descriptionText {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 800px;
+}
+
+.actors {
+    display: flex;
+    flex-direction: row;
+}
+
+.filmStaffBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    // border: 1px solid red;
+    // max-width: 900px;
+    @media screen and (max-width:1150px) {
+        gap: 10px;
+    }
+}
+
+.namesBlock {
+    // border: 1px solid red;
+    // display: flex;
+    // flex-direction: column;
+    // gap: 20px;
+    display: flex;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.personList {
+    display: flex;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 800px;
+
+    &__item {
+        & p {}
+    }
+}
+
+
+.reviewsBlock {
+    margin: 50px auto;
+
+    h2 {
+        width: fit-content;
+        font-size: 30px;
+        margin: 0 auto;
+    }
+}

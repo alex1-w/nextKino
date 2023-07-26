@@ -1,0 +1,111 @@
+.disclosureBlock {
+    position: relative;
+    justify-content: center;
+    height: 60px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+    padding: 18px 20px 18px 0;
+    margin: 20px 0;
+    border: 4px solid rgba(56, 56, 56, 0.274) 0;
+    border-radius: 20px;
+    margin: 0 auto;
+
+    @media screen and (max-width:1400px) {
+        width: 80vw;
+    }
+
+    &.positive {
+        background-color: rgba(3, 219, 3, 0.196);
+        background-clip: padding-box;
+    }
+
+    &.negative {
+        background-color: rgba(255, 20, 20, 0.244);
+        background-clip: padding-box;
+    }
+
+    &.neutral {
+        background-color: rgba(128, 128, 128, 0.32);
+        background-clip: padding-box;
+    }
+
+    & p {
+        display: inline;
+        font-size: 17px;
+        white-space: nowrap;
+        overflow: hidden;
+        padding: 5px;
+        text-overflow: ellipsis;
+        max-width: 100%;
+    }
+
+    &.active {
+        height: fit-content;
+
+        & p {
+            overflow: visible;
+            overflow: visible;
+            padding: 5px;
+            text-overflow: clip;
+            max-width: 100%;
+            white-space: normal;
+        }
+    }
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 20px;
+}
+
+.title {
+    padding: 2px;
+    border: 3px solid rgba(0, 0, 0, 0.29);
+    background-color: gray;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+.arrow {
+    & svg {
+        fill: wheat;
+        transition: transform .3s;
+    }
+
+    &.arrowRotate {}
+}
+
+.disclosureBlockContainer {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    width: 30px;
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    transition: transform 0.3s;
+
+    &.btnRotate {
+        & svg {
+            transition: transform 0.3s;
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.list {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    // border: 1px solid red;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}

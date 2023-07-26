@@ -1,0 +1,34 @@
+.main {
+    display: flex;
+    gap: 10px;
+    // max-width: 1000px;
+    // height: 30px;
+}
+
+.text {
+    display: flex;
+    gap: 10px;
+    font-size: 20px;
+
+    span {
+        // height: 100%;
+        // border: 1px solid black;
+        // margin: 0 10px;
+        border: 1.3px solid white;
+        height: 20px;
+    }
+}
+
+@media screen and (max-width:1300px) {
+    .main {
+        
+        display: flex;
+        flex-direction: column;
+    }
+
+    .text {
+        span {
+            display: none;
+        }
+    }
+}

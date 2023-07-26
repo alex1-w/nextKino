@@ -1,0 +1,22 @@
+.container {
+    display: block;
+    max-width: 1350px;
+    // width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    @media screen and (max-width:1100px) {}
+}
+
+
+// @media screen and (max-width:px) {
+//     .container {}
+// }
+
+// @media screen and (max-width:px) {
+//     .container {}
+// }
+
+// @media screen and (max-width:px) {
+//     .container {}
+// }
