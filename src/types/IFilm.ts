@@ -173,10 +173,76 @@ export interface IFilmsSimilar {
     'items': SimilarItems[]
 }
 
-
 export interface ISearchFilms {
     "keyword": string,
     "pagesCount": number,
     "searchFilmsCountResult": number,
     "films": IFilm[] | null
+}
+
+export interface IFilmFacts {
+    "total": number,
+    "items": IFilmFact[]
+}
+
+export interface IFilmFact {
+    "text": string
+    "type": "FACT" | "BLOOPER"
+    "spoiler": false
+}
+
+
+export interface IFilmImages {
+    "total": number,
+    "totalPages": number,
+    "items": IFilmImage[]
+}
+
+export interface IFilmImage {
+    "imageUrl": string,
+    "previewUrl": string
+}
+
+
+export interface IFilmAwards {
+    "total": number,
+    "items": IAward[]
+}
+
+export interface IAward {
+    "name": string,
+    "win": boolean,
+    "imageUrl": string,
+    "nominationName": string,
+    "year": number,
+    "persons": IAwardPerson[]
+}
+
+export interface IAwardPerson {
+    "kinopoiskId": number,
+    "webUrl": string,
+    "nameRu": string,
+    "nameEn": string,
+    "sex": string,
+    "posterUrl": string,
+    "growth": number,
+    "birthday": string,
+    "death": string,
+    "age": number,
+    "birthplace": string,
+    "deathplace": string,
+    "profession": string
+}
+
+
+
+export interface IFilmTrailer {
+    "total": number,
+    "items": ITrailer[]
+}
+
+export interface ITrailer {
+    "url": string,
+    "name": string,
+    "site": string
 }

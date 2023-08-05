@@ -17,18 +17,35 @@
         border: 1.3px solid white;
         height: 20px;
     }
+
+    &__subText {
+        display: none;
+    }
 }
 
 @media screen and (max-width:1300px) {
     .main {
-        
+
         display: flex;
         flex-direction: column;
     }
 
     .text {
+        display: flex;
+        align-items: flex-end;
+
         span {
             display: none;
+        }
+
+        &__subText {
+            display: block;
+            width: 90px;
+
+            p {
+                font-size: 14px;
+                color: rgba(112, 112, 112, 0.336)
+            }
         }
     }
 }

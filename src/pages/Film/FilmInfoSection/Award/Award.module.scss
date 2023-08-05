@@ -1,0 +1,21 @@
+.main {
+    border-radius: 5px;
+    width: 500px;
+    height: 150px;
+    padding: 10px;
+    background-color: #00375c;
+
+    &__head {
+        padding: 0 7px;
+        display: flex;
+        justify-content: space-between;
+        // align-items: flex-end;
+
+        span {
+            // width: 100%;
+            // height: 1px;
+            // border-bottom: 1px solid white;
+        }
+    }
+
+}

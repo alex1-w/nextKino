@@ -34,7 +34,12 @@
         gap: 20px;
     }
 
-    &__posterBlock {}
+    &__posterBlock {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
 
     &__aboutFilmBlock {
         display: flex;
@@ -159,16 +164,5 @@
 
     &__item {
         & p {}
-    }
-}
-
-
-.reviewsBlock {
-    margin: 50px auto;
-
-    h2 {
-        width: fit-content;
-        font-size: 30px;
-        margin: 0 auto;
     }
 }

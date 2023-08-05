@@ -2,6 +2,7 @@ import Link from "next/link";
 import { FC } from "react";
 import styles from './Pagination.module.scss'
 // /films/page/1
+
 export const Pagination: FC<{ totalPages: number }> = ({ totalPages }) => {
     // console.log([...new Array(totalPages)]);
 

@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { determinateNameHelper } from '@/src/helpers/determinateName.helper';
 import SlidePrevButton from './SlidePrevButton/SlidePrevButton';
 import SlideNextButton from './SlideNextBtn/SlideNextBtn';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
 import 'swiper/scss/pagination';
 import { arrowIcon } from '@/src/icons/icons';
 // import 'swiper/scss/scrollbar';
@@ -34,7 +34,7 @@ export const Slider: FC<ISlider> = ({ data, title, topFilms, filmsSimilar, link 
                 </Link>}
 
             <Swiper
-                modules={[Navigation, Pagination, Scrollbar, A11y]}
+                modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
                 spaceBetween={20}
                 navigation
                 scrollbar={{ draggable: true }}
@@ -43,7 +43,6 @@ export const Slider: FC<ISlider> = ({ data, title, topFilms, filmsSimilar, link 
                 className={styles.swiper}
                 pagination={{ clickable: true }}
             >
-
 
                 {data && data?.map(slide => (
                     <SwiperSlide key={slide.kinopoiskId} >
@@ -89,6 +88,7 @@ export const Slider: FC<ISlider> = ({ data, title, topFilms, filmsSimilar, link 
                         </Link>
                     </SwiperSlide>
                 ))}
+
                 {filmsSimilar && filmsSimilar?.map(slide => (
                     <SwiperSlide
                         key={slide.filmId}

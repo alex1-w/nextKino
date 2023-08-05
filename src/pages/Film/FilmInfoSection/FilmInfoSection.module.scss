@@ -1,0 +1,56 @@
+.main {}
+
+.navigation {
+    width: fit-content;
+    margin: 0 auto;
+
+    ul {
+        display: flex;
+        gap: 10px;
+
+        li {
+
+            padding: 10px 16px;
+            background-color: #002c538a;
+        }
+    }
+}
+
+.reviewsBlock {
+    margin: 50px auto;
+
+    h2 {
+        width: fit-content;
+        font-size: 30px;
+        margin: 0 auto;
+    }
+}
+
+.filmFactBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    padding: 20px 10px;
+
+    &__navigation {
+
+        ul {
+            gap: 10px;
+            display: flex;
+        }
+
+    }
+}
+
+.awardsBlock {
+    padding: 30px 10px;
+    // display: grid;
+    // grid-template-columns: 1fr;
+    // gap: 10px;
+    // align-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
