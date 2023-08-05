@@ -1,10 +1,10 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useSwiper } from 'swiper/react';
-import 'swiper/scss/scrollbar'
-import 'swiper/scss/hash-navigation'
-import 'swiper/scss/effect-coverflow'
-import 'swiper/swiper-bundle.min.css';
-import 'swiper/css/mousewheel'
+// import 'swiper/scss/scrollbar'
+// import 'swiper/scss/hash-navigation'
+// import 'swiper/scss/effect-coverflow'
+// import 'swiper/swiper-bundle.min.css';
+// import 'swiper/css/mousewheel'
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './ActorSlider.module.scss'
