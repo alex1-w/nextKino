@@ -14,7 +14,6 @@ interface ISearchDropdownProps {
     closeDropdown: () => void
 }
 export const SearchDropdown: FC<ISearchDropdownProps> = ({ searchFilms, searchValue, closeDropdown }) => {
-    // console.log(searchFilms.map(f => f.kinopoiskId));
     const dropdownRef = useRef<HTMLDivElement>(null);
     useOnClickOutside(dropdownRef, closeDropdown)
 
@@ -31,7 +30,6 @@ export const SearchDropdown: FC<ISearchDropdownProps> = ({ searchFilms, searchVa
                                         <div className={styles.descriptionBlock}>
                                             <p>{determinateNameHelper(film)}</p>
                                             <p className={styles.subtitle}>
-                                                {/* {film.ratingImdb && `IMDb - ${film.ratingImdb} | `} {film.ratingKinopoisk && `КП - ${film.ratingKinopoisk}`} */}
                                                 {(film.ratingKinopoisk && film.ratingImdb) ? `КП - ${film.ratingKinopoisk}  |  IMDb - ${film.ratingImdb}` : `КП ${film.ratingImdb}, `}
                                             </p>
                                             <p className={styles.subtitle}>

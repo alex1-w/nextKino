@@ -4,11 +4,11 @@ import { Fragment, createServerContext } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useSwiper } from 'swiper/react';
 import 'swiper/scss/scrollbar'
-import 'swiper/swiper.min.css';
+// import 'swiper/swiper.css';
 import dayjs from 'dayjs';
 
 import { IActor } from "@/types/IActor"
-import { IStuff } from "@/types/IFilm"
+import { IStaff } from "@/types/IFilm"
 import Image from "next/image"
 import { FC } from "react"
 import { Container } from "@/components/Container/Container"

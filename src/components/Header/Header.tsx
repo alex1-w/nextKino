@@ -9,7 +9,7 @@ import { SearchDropdown } from '../SearchDropdown/SearchDropdown';
 import { useDeBounce } from '../../hooks/useDeBounce';
 import { useOnClickOutside } from '../../hooks/useClickOutside';
 import { BurgerMenu } from '../BurgerMenu/BurgerMenu';
-import { kinoIcon } from '@/src/icons/icons';
+import { kinoIcon } from '@/icons/icons';
 export const navLinks = [
     {
         name: `Главная`,

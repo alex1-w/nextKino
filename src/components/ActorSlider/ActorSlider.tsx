@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { useSwiper } from 'swiper/react';
+// import { useSwiper } from 'swiper/react';
 // import 'swiper/scss/scrollbar'
 // import 'swiper/scss/hash-navigation'
 // import 'swiper/scss/effect-coverflow'

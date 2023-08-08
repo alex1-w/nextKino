@@ -1,7 +1,6 @@
-import { http } from "@/src/http/http";
-import { Film } from "@/src/pages/Film/Film";
-import { filmService } from "@/src/services/filmDataFetching";
-import { IFilmAwards, IFilmFacts, IFilmImages, IFilmTrailer, IFullFilm, IPrequels, IReviews, IStaff } from "@/src/types/IFilm";
+import { http } from "@/http/http";
+import { Film } from "@/pages/Film/Film";
+import { IFilmAwards, IFilmFacts, IFilmImages, IFilmTrailer, IFullFilm, IPrequels, IReviews, IStaff  } from "@/types/IFilm";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
