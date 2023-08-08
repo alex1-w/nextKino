@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import styles from './FilmAboutComponent.module.scss'
-import { ICountry, IGenre } from '@/src/types/IFilm'
+import { ICountry, IGenre } from '@/types/IFilm'
 
 interface IFilmAboutComponent {
     filmLength: number

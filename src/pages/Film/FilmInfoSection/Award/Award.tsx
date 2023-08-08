@@ -1,7 +1,6 @@
 import styles from './Award.module.scss'
 import { FC } from 'react'
-import { IAward } from '@/src/types/IFilm'
-import { determinateNameHelper } from '@/src/helpers/determinateName.helper'
+import { IAward } from '@/types/IFilm';
 
 export const Award: FC<IAward> = ({ imageUrl, name, nominationName, persons, win, year }) => {
 
@@ -20,8 +19,8 @@ export const Award: FC<IAward> = ({ imageUrl, name, nominationName, persons, win
                 {
                     win === false &&
                     <div>
-                        <p>номинации:</p>                    </div>
-
+                        <p>номинации:</p>
+                    </div>
                 }
                 {/* {win === true &&
                     <div>

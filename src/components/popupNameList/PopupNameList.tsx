@@ -1,11 +1,11 @@
-import { IStuff } from "@/types/IFilm"
+import { IStaff } from "@/types/IFilm"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { FC } from "react"
 import styles from './PopupNameList.module.scss'
 
 
-export const PopupNameList: FC<{ filmStaffs: IStuff[] }> = ({ filmStaffs }) => {
+export const PopupNameList: FC<{ filmStaffs: IStaff[] }> = ({ filmStaffs }) => {
     console.log(filmStaffs);
 
     return (

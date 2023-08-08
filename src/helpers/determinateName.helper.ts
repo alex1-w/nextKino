@@ -1,6 +1,6 @@
-import { IFilm, IFilmsSimilar, IFullFilm, IPremieresFilm, IStuff, ITopFilms, SimilarItems } from "../types/IFilm";
+import { IFilm, IFilmsSimilar, IFullFilm, IPremieresFilm, IStaff, ITopFilms, SimilarItems } from "@/types/IFilm"
 
-export const determinateNameHelper = (film: IFilm | ITopFilms |SimilarItems |  IStuff | IPremieresFilm | IFullFilm): string => {
+export const determinateNameHelper = (film: IFilm | ITopFilms |SimilarItems |  IStaff | IPremieresFilm | IFullFilm): string => {
     if (film.nameRu) {
         return film.nameRu
     }

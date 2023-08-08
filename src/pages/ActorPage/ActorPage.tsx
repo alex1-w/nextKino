@@ -42,7 +42,7 @@ export const ActorPage: FC<{ actorData: IActor }> = ({ actorData }) => {
         },
         {
             name: "Возраст",
-            value: resolveAgeWord(actorData.age),
+            value: actorData.age,
             mainValue: actorData.age
         },
         {
@@ -150,6 +150,7 @@ export const ActorPage: FC<{ actorData: IActor }> = ({ actorData }) => {
                         {actorsProfessions.map(profession => (
                             profession.value.length >= 1 ?
                                 <DisclosureData
+                                    reviewType="NEUTRAL"
                                     key={profession.name}
                                     name={profession.name}
                                 >

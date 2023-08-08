@@ -1,5 +1,5 @@
 import { http } from "../http/http"
-import { IFullFilm, IReviews, IStuff } from "../types/IFilm"
+import { IFullFilm, IReviews, IStaff } from "../types/IFilm"
 
 export const filmService = {
     async getFilm(id: string) {
@@ -15,7 +15,7 @@ export const filmService = {
         return filmReviews
     },
     async getFilmStaffs(id: string) {
-        const { data: filmStaffs } = await http.get<IStuff[]>(`/v1/staff/`, { params: { filmId: id } })
+        const { data: filmStaffs } = await http.get<IStaff[]>(`/v1/staff/`, { params: { filmId: id } })
         return filmStaffs
     },
 }

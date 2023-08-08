@@ -1,7 +1,7 @@
-import { http } from "@/src/http/http";
-import { Films } from "@/src/pages/Films/Films";
-import { TopFilms } from "@/src/pages/TopFilms/TopFilms";
-import { IFilmResponse } from "@/src/types/IFilm";
+import { http } from "@/http/http"
+import { Films } from "@/pages/Films/Films"
+import { IFilmResponse } from "@/types/IFilm"
+
 
 async function getFilms() {
     const { data } = await http.get<IFilmResponse>('/v2.2/films')

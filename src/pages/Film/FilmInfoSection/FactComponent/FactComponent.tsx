@@ -1,5 +1,5 @@
+import { IFilmFact } from '@/types/IFilm'
 import styles from './FactComponent.module.scss'
-import { IFilmFact } from "@/src/types/IFilm"
 import { FC } from "react"
 
 

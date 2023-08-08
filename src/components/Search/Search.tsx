@@ -6,7 +6,6 @@ import { Header } from "../Header/Header";
 import { Container } from "../Container/Container";
 import Link from "next/link";
 import { FilmItem } from "../FilmItem/FilmItem";
-import ReactPaginate from "react-paginate";
 // import { useRouter } from "next/router";
 // import stylesfilmBlock from '../Films.module.scss';
 import stylesfilmBlock from '../../pages/Films/Films.module.scss';
@@ -44,7 +43,7 @@ export const Search: FC<{ searchData: ISearchFilms }> = ({ searchData }) => {
 
                 {searchData.pagesCount > 1 &&
                     <div className={styles.paginationBlock}>
-                        <ReactPaginate
+                        {/* <ReactPaginate
                             className={styles.paginationBlock__pagination}
                             pageLinkClassName={styles.pageLinkClassName}
                             onPageChange={pageChangeHandler}
@@ -53,7 +52,7 @@ export const Search: FC<{ searchData: ISearchFilms }> = ({ searchData }) => {
                             previousLabel={"<"}
                             nextLabel={'>'}
                             pageClassName={styles.pageClassName}
-                        />
+                        /> */}
                     </div>}
             </Container>
 

@@ -1,20 +1,19 @@
 import styles from './Slider.module.scss'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { IFilmsSimilar, IPremieresFilm, ITop, ITopFilms, SimilarItems } from '@/src/types/IFilm';
 import 'swiper/css';
 import { FC } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { determinateNameHelper } from '@/src/helpers/determinateName.helper';
 import SlidePrevButton from './SlidePrevButton/SlidePrevButton';
 import SlideNextButton from './SlideNextBtn/SlideNextBtn';
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
 import 'swiper/scss/pagination';
-import { arrowIcon } from '@/src/icons/icons';
+import { arrowIcon } from '@/icons/icons';
+import { determinateNameHelper } from '@/helpers/determinateName.helper';
+import { IFilmsSimilar, IPremieresFilm, ITop, ITopFilms, SimilarItems } from '@/types/IFilm';
 // import 'swiper/scss/scrollbar';
 
 interface ISlider {
-    // data: IPremieresFilm[] | ITopFilms[]
     data?: IPremieresFilm[]
     topFilms?: ITopFilms[]
     filmsSimilar?: SimilarItems[]

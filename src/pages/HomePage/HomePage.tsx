@@ -1,10 +1,10 @@
 'use client'
-import { Slider } from "@/src/components/Slider/Slider";
 import { Header } from "../../components/Header/Header";
 import { IPremieresFilmResponse, ITop } from "../../types/IFilm"
 import Head from "next/head";
 import { FC, useEffect } from "react"
-import { Container } from "@/src/components/Container/Container";
+import { Container } from "@/components/Container/Container";
+import { Slider } from "@/components/Slider/Slider";
 
 export const HomePage: FC<{ premierFilms: IPremieresFilmResponse, topFilms: ITop }> = ({ premierFilms, topFilms }) => {
 

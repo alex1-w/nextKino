@@ -1,11 +1,11 @@
 import styles from './CommentComponent.module.scss'
-import { ReviewItems } from '@/src/types/IFilm';
 import { FC, useRef, useState } from "react"
-import { arrowIcon, userIcon } from '@/src/icons/icons';
 import { motion, AnimatePresence } from 'framer-motion'
 import dayjs from 'dayjs'
 import cn from 'classnames'
 import { ITypes } from '../Film';
+import { ReviewItems } from '@/types/IFilm';
+import { arrowIcon, userIcon } from '@/icons/icons'
 
 const localizedFormat = require('dayjs/plugin/localizedFormat')
 dayjs.extend(localizedFormat)

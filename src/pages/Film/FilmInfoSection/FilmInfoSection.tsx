@@ -1,10 +1,10 @@
 import { FC, useEffect, useState } from 'react';
 import styles from './FilmInfoSection.module.scss';
-import { IFilmAwards, IFilmFact, IFilmFacts, IFilmImages, IFilmTrailer, IReviews } from '@/src/types/IFilm';
 import { CommentComponent } from '../CommentComponent/CommentComponent';
 import { FactComponent } from './FactComponent/FactComponent';
 import Image from 'next/image';
 import { Award } from './Award/Award';
+import { IFilmAwards, IFilmFact, IFilmFacts, IFilmImages, IFilmTrailer, IReviews } from '@/types/IFilm';
 
 const pageVariants = [
     {

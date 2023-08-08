@@ -1,6 +1,5 @@
 import styles from './DisclosureData.module.scss';
 import React, { Children, FC, ReactNode, useRef, useState } from "react";
-import Image from "next/image";
 import cn from "classnames";
 import { ITypes } from "@/types/IFilm";
 import { motion } from "framer-motion";

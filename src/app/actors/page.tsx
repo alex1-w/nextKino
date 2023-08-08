@@ -1,5 +1,4 @@
-import { http } from "@/src/http/http"
-
+import { http } from "@/http/http";
 
 const getActors = async () => {
     const { data } = await http.get(`/v1/staff`, )

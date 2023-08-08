@@ -1,14 +1,6 @@
 'use client';
 import styles from './Footer.module.scss';
 import Link from 'next/link';
-import { ChangeEvent, ChangeEventHandler, FC, useEffect, useRef, useState } from 'react';
-import { LogIn } from '../LogIn/LogIn';
-import { filmsService } from '../../services/films.service';
-import { IFilm, ISearchFilms } from '../../types/IFilm';
-import { SearchDropdown } from '../SearchDropdown/SearchDropdown';
-import { useDeBounce } from '../../hooks/useDeBounce';
-import { useOnClickOutside } from '../../hooks/useClickOutside';
-import { BurgerMenu } from '../BurgerMenu/BurgerMenu';
 import { kinoIcon } from '@/icons/icons';
 export const navLinks = [
     {
