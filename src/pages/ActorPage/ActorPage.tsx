@@ -15,7 +15,6 @@ import { Container } from "@/components/Container/Container"
 import { Header } from "@/components/Header/Header"
 import Link from 'next/link';
 import { DisclosureData } from "@/components/DisclosureData/DisclosureData";
-import { SetTitleHead } from "@/helpers/setTitleHead";
 
 const resolveAgeWord = (year: number) => {
     const strYear = String(year).slice(-1);
