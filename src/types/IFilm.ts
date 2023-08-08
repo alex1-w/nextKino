@@ -1,5 +1,4 @@
 // import { ITopFilms, ICountry, IGenre } from './IFilm';
-import { types } from "util"
 
 export interface IFilm {
     kinopoiskId: number,

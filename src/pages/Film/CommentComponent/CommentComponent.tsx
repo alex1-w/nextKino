@@ -5,7 +5,7 @@ import dayjs from 'dayjs'
 import cn from 'classnames'
 import { ITypes } from '../Film';
 import { ReviewItems } from '@/types/IFilm';
-import { arrowIcon, userIcon } from '@/icons/icons'
+import { arrowIcon, userIcon } from '../../../icons/icons'
 
 const localizedFormat = require('dayjs/plugin/localizedFormat')
 dayjs.extend(localizedFormat)

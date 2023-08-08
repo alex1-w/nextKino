@@ -1,8 +1,7 @@
+import styles from './FilmItem.module.scss';
 import Image from "next/image";
 import Link from "next/link";
 import { FC } from 'react';
-import styles from './FilmItem.module.scss';
-// import { determinateNameHelper } from "@/helpers/determinateName.helper";
 import { ITopFilms, IFilm } from "@/types/IFilm";
 
 export const FilmItem: FC<{ film: IFilm | ITopFilms }> = ({ film }) => {

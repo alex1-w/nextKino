@@ -1,4 +1,3 @@
-
 export interface PersonResponseSpouses {
     "personId": number,
     "name": string | null,
