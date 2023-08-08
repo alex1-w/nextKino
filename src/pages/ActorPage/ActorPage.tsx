@@ -26,7 +26,6 @@ const resolveAgeWord = (year: number) => {
 }
 
 export const ActorPage: FC<{ actorData: IActor }> = ({ actorData }) => {
-    SetTitleHead("ActorPage")
 
     const actorDataDescription = [
         {
