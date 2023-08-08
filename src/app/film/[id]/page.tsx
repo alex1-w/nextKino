@@ -1,13 +1,13 @@
 import { http } from "@/http/http";
 import { Film } from "@/pages/Film/Film";
-import { IFilmAwards, IFilmFacts, IFilmImages, IFilmTrailer, IFullFilm, IPrequels, IReviews, IStaff  } from "@/types/IFilm";
+import { IFilmAwards, IFilmFacts, IFilmImages, IFilmTrailer, IFullFilm, IPrequels, IReviews, IStaff } from "@/types/IFilm";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: 'Film'
 }
 
-export async function getFilm(id: string) {
+async function getFilm(id: string) {
     // const { data: filmStaffs } = await http.get<IStaff[]>(`/v1/staff/`, { params: { filmId: id } })
     // const { data: filmsPrequels } = await http.get<IPrequels>(`/v2.1/films/${id}/sequels_and_prequels`)
     const { data: filmData } = await http.get<IFullFilm>(`/v2.2/films/${id}`)
