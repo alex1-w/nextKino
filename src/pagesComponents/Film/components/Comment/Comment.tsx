@@ -1,23 +1,22 @@
-import styles from './CommentComponent.module.scss'
+import styles from './Comment.module.scss'
 import { FC, useRef, useState } from "react"
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import dayjs from 'dayjs'
 import cn from 'classnames'
-import { ITypes } from '../Film';
-import { ReviewItems } from '@/types/IFilm';
-import { arrowIcon, userIcon } from '../../../icons/icons'
+import { ITypes, ReviewItems } from '@/types/IFilm';
+import { arrowIcon, userIcon } from '@/icons/icons'
 
 const localizedFormat = require('dayjs/plugin/localizedFormat')
 dayjs.extend(localizedFormat)
 require('dayjs/locale/ru')
 dayjs.locale('ru')
 
-interface ICommentComponent {
+interface IComment {
     reviewType: ITypes
     review: ReviewItems
 }
 
-export const CommentComponent: FC<ICommentComponent> = ({ review, reviewType }) => {
+export const Comment: FC<IComment> = ({ review, reviewType }) => {
     const [isOpened, setIsOpen] = useState<boolean>(false)
     const fullTextRef = useRef<HTMLDivElement>(null)
     const arrowRef = useRef<HTMLDivElement>(null)

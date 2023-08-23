@@ -1,10 +1,10 @@
 import { FC, useEffect, useState } from 'react';
-import styles from './FilmInfoSection.module.scss';
-import { CommentComponent } from '../CommentComponent/CommentComponent';
+import styles from './InfoSection.module.scss';
 import { FactComponent } from './FactComponent/FactComponent';
 import Image from 'next/image';
 import { Award } from './Award/Award';
 import { IFilmAwards, IFilmFact, IFilmFacts, IFilmImages, IFilmTrailer, IReviews } from '@/types/IFilm';
+import { Comment } from '../Comment/Comment';
 
 const pageVariants = [
     {
@@ -33,7 +33,7 @@ const pageVariants = [
     },
 ]
 
-interface IFilmInfoSection {
+interface InfoSection {
     filmReviews: IReviews,
     filmFacts: IFilmFacts,
     filmImages: IFilmImages,
@@ -42,7 +42,7 @@ interface IFilmInfoSection {
 }
 type Variant = "reviews" | "facts" | "photos" | "photo" | "awards" | 'trailer'
 
-export const FilmInfoSection: FC<IFilmInfoSection> = ({ filmFacts, filmReviews, filmImages, filmAwards }) => {
+export const InfoSection: FC<InfoSection> = ({ filmFacts, filmReviews, filmImages, filmAwards }) => {
     const [variant, setVariant] = useState<string | Variant>("reviews")
     const changeVariant = (variant: string) => setVariant(variant)
 
@@ -68,7 +68,7 @@ export const FilmInfoSection: FC<IFilmInfoSection> = ({ filmFacts, filmReviews, 
             {variant === 'reviews' &&
                 <section className={styles.reviewsBlock}>
                     {filmReviews.items.slice(0, 7).map(review => (
-                        <CommentComponent reviewType={review.type} review={review} key={review.kinopoiskId} />
+                        <Comment reviewType={review.type} review={review} key={review.kinopoiskId} />
                     ))}
                 </section>
             }

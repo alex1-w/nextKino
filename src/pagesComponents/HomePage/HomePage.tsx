@@ -11,11 +11,8 @@ export const HomePage: FC<{ premierFilms: IPremieresFilmResponse, topFilms: ITop
     return (
         <Container>
             <Head><title>HomePage</title></Head>
-            <Header />
             <Slider data={premierFilms.items.slice(0, 14)} title="Премьмеры месяца" />
             <Slider topFilms={topFilms.films} title="Топ фильмов" link='top-films' />
-            {/* <TopHundredFilms topFilms={topFilms} /> */}
-            {/* <DisclosureData /> */}
         </Container>
     )
 }

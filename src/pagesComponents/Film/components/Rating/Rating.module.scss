@@ -1,0 +1,16 @@
+.main {
+    width: fit-content;
+    padding: 12px;
+    border-radius: 10px;
+    // border: 3px solid rgb(4, 0, 74);
+    background-color: rgba(0, 2, 18, 0.566);
+    box-shadow: 1px 1px 8px 0px rgba(34, 60, 80, 0.564);
+    font-size: 20px;
+    height: fit-content;
+    color: white;
+
+    span {
+        margin: 0 10px;
+        border: 1.3px solid white;
+    }
+}

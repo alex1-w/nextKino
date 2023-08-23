@@ -10,6 +10,7 @@ import { useDeBounce } from '../../hooks/useDeBounce';
 import { useOnClickOutside } from '../../hooks/useClickOutside';
 import { BurgerMenu } from '../BurgerMenu/BurgerMenu';
 import { kinoIcon } from '@/icons/icons';
+
 export const navLinks = [
     {
         name: `Главная`,
@@ -29,118 +30,91 @@ export const navLinks = [
     }
 ]
 
+// useRouter
+
 export const Header = () => {
-    ///////////////////////////////////////////////////////////////////////////////////////////////////
-    const [isOpened, setIsOpened] = useState<boolean>(false)
-
-    const loginOpened = () => {
-        setIsOpened(true)
-    }
-
-    const loginClosed = () => {
-        setIsOpened(false)
-    }
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     const [searchValue, setSearchValue] = useState<string>('');
     const [filmsList, setFilms] = useState<IFilm[]>([]);
+    const [burgerMenu, setBurgerMenu] = useState<boolean>(false)
     const showDropdown = useRef<HTMLDivElement>(null);
 
-    const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        setSearchValue(e.target.value)
-    }
-    
+    const closeDropdown = () => showDropdown.current?.classList.remove(styles.opened)
+    const changeHandler = (e: ChangeEvent<HTMLInputElement>) => setSearchValue(e.target.value)
+    const burgerClick = () => setBurgerMenu(!burgerMenu)
+    const debounceSearchValue = useDeBounce(searchValue)
+
     const getSearchFilms = async () => {
         const { data } = await filmsService.searchFilms(searchValue)
 
         if (data.films) {
             setFilms([])
             setFilms(data.films.slice(0, 12))
-            console.log(444, filmsList);
             showDropdown.current?.classList.add(styles.opened)
         }
     }
 
-    const debounceSearchValue = useDeBounce(searchValue)
     useEffect(() => {
-        if (debounceSearchValue.length >= 3) {
-            getSearchFilms()
-        }
-        if (debounceSearchValue === '') {
-            showDropdown.current?.classList.remove(styles.opened)
-        }
+        if (debounceSearchValue.length >= 3) getSearchFilms()
+        if (debounceSearchValue === '') showDropdown.current?.classList.remove(styles.opened)
     }, [debounceSearchValue])
-
 
     const escEvent = (e: any) => {
         // e.preventDefault();
         // // e.stopPropagation();
-        if (e.key === 'Escape') {
-            showDropdown.current?.classList.remove(styles.opened)
-        }
-        if (e.key === 'Enter') {
-            window.location.href = `/search`
-        }
+        if (e.key === 'Escape') showDropdown.current?.classList.remove(styles.opened)
+        if (e.key === 'Enter') window.location.href = `/search`
     }
 
-    const closeDropdown = () => {
-        showDropdown.current?.classList.remove(styles.opened)
-    }
-    ///////////////////////////////////////////////////////////////////////////////////////
-    const [burgerMenu, setBurgerMenu] = useState<boolean>(false)
-
-    const BurgerClick = () => {
-        setBurgerMenu(!burgerMenu)
-    }
-    ///////////////////////////////////////////////////////////////////////////////////////
     return (
         <header className={styles.head}>
-            <div className={styles.wrapper}>
 
-                <div className={styles.burgerMenu} onClick={() => { BurgerClick() }}>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    {/* {burgerMenu && <BurgerMenu />} */}
-                </div>
-
-                <Link href={'/'}>
-                    <div className={styles.logoBlock}>
-                        {kinoIcon}
-                        <p>KINO</p>
-                    </div>
-                </Link>
-
-                <div className={styles.navBlock}>
-                    <nav>
-                        <ul className={styles.navBlock__ssac}>
-                            {navLinks.map(link => (
-                                <li key={link.link} className={styles.links}>
-                                    <Link href={link.link}>
-                                        {link.name}
-                                    </Link>
-                                </li>))}
-                        </ul>
-                    </nav>
-                </div>
-
-                <div className={styles.inputBlock} onKeyDown={escEvent} >
-                    <div className={styles.inputBlock__inp}>
-                        <input type="text" placeholder='Поиск' value={searchValue} onChange={changeHandler} />
-                    </div>
-
-                    <div ref={showDropdown} className={styles.inputBlock__inp__dropdown} >
-                        <div >
-                            <SearchDropdown searchFilms={filmsList} searchValue={searchValue} closeDropdown={closeDropdown} />
-                        </div>
-                    </div>
-                </div>
-
-                <div className={styles.login}>
-                    <p onClick={() => loginOpened()}>{isOpened ? <></> : 'Войти'}</p>
-                </div>
-                {isOpened && <LogIn loginClosed={loginClosed} />}
+            <div className={styles.burgerMenu} onClick={burgerClick}>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-        </header>
+
+            <Link href={'/'}>
+                <div className={styles.logoBlock}>
+                    {kinoIcon}
+                    <p>KINO</p>
+                </div>
+            </Link>
+
+            <nav className={styles.navBlock}>
+                <ul className={styles.navBlock__ssac}>
+                    {navLinks.map(link => (
+                        <li key={link.link} className={styles.links}>
+                            <Link href={link.link}>
+                                {link.name}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            </nav>
+
+            <div className={styles.inputBlock} onKeyDown={escEvent} >
+                <div className={styles.inputBlock__inp}>
+                    <input
+                        type="text"
+                        placeholder='Поиск'
+                        value={searchValue}
+                        onChange={changeHandler}
+                    />
+                </div>
+
+                <div ref={showDropdown} className={styles.inputBlock__inp__dropdown} >
+                    <div>
+                        <SearchDropdown
+                            searchFilms={filmsList}
+                            searchValue={searchValue}
+                            closeDropdown={closeDropdown}
+                        />
+                    </div>
+                </div>
+            </div>
+
+        </header >
     )
 
 }

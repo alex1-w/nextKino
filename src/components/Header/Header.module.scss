@@ -1,19 +1,22 @@
 .head {
-    max-width: 1300px;
+    // border: 1px solid red;
+    max-width: 1700px;
     padding: 15px 30px;
     margin: 0 auto;
     margin-bottom: 30px;
     background: radial-gradient(circle, rgba(0, 39, 70, 0.9393202837775735) 4%, rgba(0, 20, 36, 1) 49%);
-    border-radius: 0 0 20px 20px;
+    // border-radius: 0 0 20px 20px;
+    display: flex;
+    justify-content: space-around;
 
-    @media screen and (max-width: 750px) {
-        padding: 5px;
-    }
+    align-items: center;
 
-    @media screen and (max-width: 900px) {
-        padding: 5px;
-    }
 }
+
+.burgerMenu{
+    display: none;
+}
+
 
 .logoBlock {
     display: flex;
@@ -26,13 +29,8 @@
     }
 }
 
-.wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .navBlock {
+    // border: 1px solid red;
     width: 400px;
 
     & ul {
@@ -119,7 +117,7 @@
         }
     }
 
-    & input {
+    input {
         display: flex;
         padding: 10px;
         border-radius: 13px;
@@ -159,6 +157,7 @@
         flex-direction: column;
         gap: 7px;
         cursor: pointer;
+        display: none;
 
         & span {
             background-color: #fff;

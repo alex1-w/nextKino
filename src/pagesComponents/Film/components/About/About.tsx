@@ -1,8 +1,8 @@
 import { FC } from 'react'
-import styles from './FilmAboutComponent.module.scss'
+import styles from './About.module.scss'
 import { ICountry, IGenre } from '@/types/IFilm'
 
-interface IFilmAboutComponent {
+interface IAbout {
     filmLength: number
     year: number
     ratingAgeLimits: string
@@ -17,7 +17,7 @@ const sliceAge = (age: string | null): string => {
     return ''
 }
 
-export const FilmAboutComponent: FC<IFilmAboutComponent> = ({ countries, filmLength, genres, ratingAgeLimits, year, }) => {
+export const About: FC<IAbout> = ({ countries, filmLength, genres, ratingAgeLimits, year, }) => {
 
     // countries.map(item => {
     // console.log(item)
