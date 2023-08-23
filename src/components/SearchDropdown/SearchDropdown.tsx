@@ -14,6 +14,7 @@ interface ISearchDropdownProps {
     closeDropdown: () => void
 }
 export const SearchDropdown: FC<ISearchDropdownProps> = ({ searchFilms, searchValue, closeDropdown }) => {
+    
     const dropdownRef = useRef<HTMLDivElement>(null);
     useOnClickOutside(dropdownRef, closeDropdown)
 

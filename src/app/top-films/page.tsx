@@ -1,5 +1,5 @@
 import { http } from "@/http/http"
-import { TopFilms } from "@/pages/TopFilms/TopFilms"
+import { TopFilms } from "@/pagesComponents/TopFilms/TopFilms"
 
 const getTopFilms = async () => {
     const { data } = await http.get('v2.2/films/top')

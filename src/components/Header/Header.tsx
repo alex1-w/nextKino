@@ -48,6 +48,7 @@ export const Header = () => {
     const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setSearchValue(e.target.value)
     }
+    
     const getSearchFilms = async () => {
         const { data } = await filmsService.searchFilms(searchValue)
 
@@ -58,8 +59,8 @@ export const Header = () => {
             showDropdown.current?.classList.add(styles.opened)
         }
     }
-    const debounceSearchValue = useDeBounce(searchValue)
 
+    const debounceSearchValue = useDeBounce(searchValue)
     useEffect(() => {
         if (debounceSearchValue.length >= 3) {
             getSearchFilms()

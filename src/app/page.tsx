@@ -1,7 +1,7 @@
 import styles from './page.module.scss'
 import { IPremieresFilmResponse, ITop } from '../types/IFilm'
 import { http } from '../http/http'
-import { HomePage } from '../pages/HomePage/HomePage'
+import { HomePage } from '@/pagesComponents/HomePage/HomePage'
 
 const months = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER']
 

@@ -1,5 +1,5 @@
 import { http } from "@/http/http"
-import { Films } from "@/pages/Films/Films"
+import { Films } from "@/pagesComponents/Films/Films"
 import { IFilmResponse } from "@/types/IFilm"
 
 

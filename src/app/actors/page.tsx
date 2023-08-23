@@ -1,18 +1,14 @@
 import { http } from "@/http/http";
 
 const getActors = async () => {
-    const { data } = await http.get(`/v1/staff`, )
-    console.log(33);
-
-    return data
+    // const { data } = await http.get(`/v1/staff`)
+    // return data
 }
 
 
 export default async function ActorsComponent() {
 
-    const actors = await getActors()
-    console.log(actors);
-
+    // const actors = await getActors()
 
     return (
         <div>

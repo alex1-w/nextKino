@@ -1,5 +1,5 @@
 import { http } from "@/http/http";
-import { Film } from "@/pages/Film/Film";
+import { Film } from "@/pagesComponents/Film/Film";
 import { IFilmAwards, IFilmFacts, IFilmImages, IFilmTrailer, IFullFilm, IPrequels, IReviews, IStaff } from "@/types/IFilm";
 import { Metadata } from "next";
 
