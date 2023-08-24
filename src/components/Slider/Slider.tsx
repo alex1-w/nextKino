@@ -27,10 +27,14 @@ export const Slider: FC<ISlider> = ({ data, title, topFilms, filmsSimilar, link 
         <div className={styles.main}>
 
             {!link ? <h2>{title}</h2> :
-                <Link href={link} className={styles.linkHeading}>
+                // <Link href={link} className={styles.linkHeading}>
+                //     <h2>{title}</h2>
+                //     {arrowIcon}
+                // </Link>}
+                <div className={styles.linkHeading}>
                     <h2>{title}</h2>
                     {arrowIcon}
-                </Link>}
+                </div>}
 
             <Swiper
                 modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
@@ -45,7 +49,7 @@ export const Slider: FC<ISlider> = ({ data, title, topFilms, filmsSimilar, link 
 
                 {data && data?.map(slide => (
                     <SwiperSlide key={slide.kinopoiskId} >
-                        <Link href={`film/${slide.kinopoiskId}`} className={styles.slide}>
+                        <div className={styles.slide}>
                             <div className={styles.slide__imageBlock}>
                                 <Image
                                     alt={determinateNameHelper(slide)}
@@ -57,7 +61,20 @@ export const Slider: FC<ISlider> = ({ data, title, topFilms, filmsSimilar, link 
                             <div className={styles.slide__filmName}>
                                 <p>{determinateNameHelper(slide)}</p>
                             </div>
-                        </Link>
+                        </div>
+                        {/* <Link href={`film/${slide.kinopoiskId}`} className={styles.slide}>
+                            <div className={styles.slide__imageBlock}>
+                                <Image
+                                    alt={determinateNameHelper(slide)}
+                                    src={slide.posterUrl}
+                                    width={180}
+                                    height={240}
+                                />
+                            </div>
+                            <div className={styles.slide__filmName}>
+                                <p>{determinateNameHelper(slide)}</p>
+                            </div>
+                        </Link> */}
                     </SwiperSlide>
                 ))}
 
@@ -67,7 +84,7 @@ export const Slider: FC<ISlider> = ({ data, title, topFilms, filmsSimilar, link 
                         key={slide.filmId}
                         className={styles.sliderItem}
                     >
-                        <Link
+                        {/* <Link
                             key={slide.filmId}
                             href={`film/${slide.filmId}`}
                             className={styles.slide}
@@ -85,6 +102,24 @@ export const Slider: FC<ISlider> = ({ data, title, topFilms, filmsSimilar, link 
                                 <p>{determinateNameHelper(slide)}</p>
                             </div>
                         </Link>
+                    </SwiperSlide> */}
+                        <div
+                            key={slide.filmId}
+                            className={styles.slide}
+                        >
+                            <div
+                                key={slide.filmId}
+                                className={styles.slide__imageBlock}>
+                                <Image
+                                    src={slide.posterUrlPreview}
+                                    key={slide.filmId}
+                                    width={180}
+                                    height={240}
+                                    className={styles.swipeImg}
+                                    alt={String(slide.nameEn)} />
+                                <p>{determinateNameHelper(slide)}</p>
+                            </div>
+                        </div>
                     </SwiperSlide>
                 ))}
 
@@ -93,7 +128,7 @@ export const Slider: FC<ISlider> = ({ data, title, topFilms, filmsSimilar, link 
                         key={slide.filmId}
                         className={styles.sliderItem}
                     >
-                        <Link
+                        {/* <Link
                             key={slide.filmId}
                             href={`film/${slide.filmId}`}
                             className={styles.slide}
@@ -110,7 +145,21 @@ export const Slider: FC<ISlider> = ({ data, title, topFilms, filmsSimilar, link 
                                     alt={String(slide.nameEn)} />
                                 <p>{determinateNameHelper(slide)}</p>
                             </div>
-                        </Link>
+                        </Link> */}
+                        <div key={slide.filmId} className={styles.slide}>
+                            <div
+                                key={slide.filmId}
+                                className={styles.slide__imageBlock}>
+                                <Image
+                                    src={slide.posterUrl}
+                                    key={slide.filmId}
+                                    width={180}
+                                    height={240}
+                                    className={styles.swipeImg}
+                                    alt={String(slide.nameEn)} />
+                                <p>{determinateNameHelper(slide)}</p>
+                            </div>
+                        </div>
                     </SwiperSlide>
                 ))}
 

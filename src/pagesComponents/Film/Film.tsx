@@ -126,7 +126,7 @@ export const Film: FC<IFilmProps> = ({ filmData, filmReviews, filmsSimilar, film
                 <Description description={description} shortDescription={shortDescription} />
 
                 {/* <Similar filmsSimilar={filmsSimilar.total} /> */}
-                <Similar filmsSimilar={filmsSimilar.total} />
+                <Similar filmsSimilar={filmsSimilar} />
                 {/* <Similar filmsSimilar={filmsSimilar.total} /> */}
 
                 <InfoSection
