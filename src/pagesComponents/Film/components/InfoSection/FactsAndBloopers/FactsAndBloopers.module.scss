@@ -5,11 +5,12 @@
     align-items: center;
     padding: 20px 10px;
 
-    &__navigation {
+    nav {
 
         ul {
             gap: 10px;
             display: flex;
+            
         }
     }
 }

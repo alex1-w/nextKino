@@ -10,7 +10,7 @@ interface IFactsAndBloopers {
 }
 
 const FactsAndBloopers: FC<IFactsAndBloopers> = ({ filmFacts }) => {
-    const [factsVariant, setFactsVariant] = useState<'FACT' | 'BLOOPER'>('BLOOPER')
+    const [factsVariant, setFactsVariant] = useState<'FACT' | 'BLOOPER'>('FACT')
 
     return (
         <section className={styles.main}>
@@ -21,23 +21,26 @@ const FactsAndBloopers: FC<IFactsAndBloopers> = ({ filmFacts }) => {
                     <li onClick={() => setFactsVariant('FACT')}>
                         <p>Факты</p>
                     </li>
-                    
+
                     <li onClick={() => setFactsVariant('BLOOPER')}>
                         <p>Ошибки в фильме</p>
                     </li>
 
                 </ul>
             </nav>
+
             {factsVariant === 'BLOOPER'
                 ?
-                filmFacts.items.filter(item => item.type === 'BLOOPER').map(fact => (
-                    <FactComponent
-                        spoiler={fact.spoiler}
-                        text={fact.text}
-                        type={fact.type}
-                        key={fact.text}
-                    />
-                ))
+                <>
+                    {filmFacts.items.filter(item => item.type === 'BLOOPER').map(fact => (
+                        <FactComponent
+                            spoiler={fact.spoiler}
+                            text={fact.text}
+                            type={fact.type}
+                            key={fact.text}
+                        />
+                    ))}
+                </>
                 :
                 filmFacts.items.filter(item => item.type === 'FACT').map(fact => (
                     <FactComponent

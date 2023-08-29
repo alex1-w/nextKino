@@ -1,10 +1,6 @@
 import styles from './InfoSection.module.scss';
-import { FC, useEffect, useState } from 'react';
-import { FactComponent } from './FactComponent/FactComponent';
-import Image from 'next/image';
-import { Award } from './Awards/Award/Award';
+import { FC, useState } from 'react';
 import { IFilmAwards, IFilmFact, IFilmFacts, IFilmImages, IFilmTrailer, IReviews } from '@/types/IFilm';
-import { Comment } from '../ReviewsBlock/Comment/Comment';
 import Awards from './Awards/Awards';
 import ReviewsBlock from '../ReviewsBlock/ReviewsBlock';
 import FactsAndBloopers from './FactsAndBloopers/FactsAndBloopers';
@@ -22,14 +18,14 @@ const pageVariants = [
         name: 'Бюджет и сборы',
         value: 'bugetAndAmount'
     },
-    {
-        name: 'Трейлер',
-        value: 'trailer'
-    },
-    {
-        name: 'Фото',
-        value: 'photo'
-    },
+    // {
+    //     name: 'Трейлер',
+    //     value: 'trailer'
+    // },
+    // {
+    //     name: 'Фото',
+    //     value: 'photo'
+    // },
     {
         name: 'Награды',
         value: 'awards'
@@ -56,45 +52,29 @@ export const InfoSection: FC<InfoSection> = ({ filmFacts, filmReviews, filmImage
         ['awards']: <Awards filmAwards={filmAwards} />,
         ['facts']: <FactsAndBloopers filmFacts={filmFacts} />
     }
-    
+
     return (
         <div className={styles.main}>
+
             <nav className={styles.navigation}>
                 <ul>
-                    {
-                        pageVariants.map(variant => (
-                            <li key={variant.name} onClick={() => setVariant(variant.value)}>
-                                <p>{variant.name}</p>
-                            </li>
-                        ))
-                    }
+                    {pageVariants.map(variant => (
+                        <li key={variant.name} onClick={() => setVariant(variant.value)}>
+                            <p>
+                                {variant.name}
+                            </p>
+                        </li>
+                    ))}
                 </ul>
             </nav>
+
             {/* variantBlock[variant as 'awards' | 'reviews'] */}
 
             {variant === 'reviews' && variantBlock['reviews']}
 
             {variant === 'awards' && variantBlock['awards']}
 
-            {variant === '' && variantBlock['facts']}
-
-
-            {/* {variant === 'awards' &&
-
-                <section className={styles.awardsBlock}>
-                    {filmAwards.items.map(item => (
-                        <Award
-                            imageUrl={item.imageUrl}
-                            name={item.name}
-                            nominationName={item.nominationName}
-                            persons={item.persons}
-                            win={item.win}
-                            year={item.year}
-                            key={item.imageUrl}
-                        />
-                    ))}
-                </section>
-            } */}
+            {variant === 'facts' && variantBlock['facts']}
 
         </div >
     )
