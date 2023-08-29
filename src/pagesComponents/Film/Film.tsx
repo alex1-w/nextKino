@@ -77,8 +77,6 @@ const resolveType = (review: ITypes): string | undefined => {
 export const Film: FC<IFilmProps> = ({ filmData, filmReviews, filmsSimilar, filmFacts, filmImages, filmAwards, filmTrailer }) => {
     const { ratingImdb, ratingKinopoisk, slogan, countries, description, shortDescription, year, filmLength, genres, ratingAgeLimits } = filmData
 
-    console.log(filmsSimilar);
-
 
     return (
         <Container>
@@ -93,24 +91,16 @@ export const Film: FC<IFilmProps> = ({ filmData, filmReviews, filmsSimilar, film
                             alt={filmData.nameOriginal}
                             className={styles.posterBlock__image}
                         />
-
                         <Rating ratingImdb={ratingImdb} ratingKinopoisk={ratingKinopoisk} />
                     </div>
 
                     <div className={styles.filmBlock__aboutFilmBlock}>
                         <div>
-                            <div className={styles.filmBlock__head}>
-                                <h1 className={styles.title}>
-                                    {determinateNameHelper(filmData)}
-                                </h1>
-                            </div>
-
-                            {slogan
-                                &&
-                                <p className={styles.subTitle}>
-                                    {slogan}
-                                </p>
-                            }
+                            <h1 className={styles.filmBlock__aboutFilmBlock__title}>
+                                {determinateNameHelper(filmData)}
+                            </h1>
+                            
+                            {slogan && <p>{slogan}</p>}
                         </div>
 
                         <About
@@ -125,9 +115,7 @@ export const Film: FC<IFilmProps> = ({ filmData, filmReviews, filmsSimilar, film
 
                 <Description description={description} shortDescription={shortDescription} />
 
-                {/* <Similar filmsSimilar={filmsSimilar.total} /> */}
                 <Similar filmsSimilar={filmsSimilar} />
-                {/* <Similar filmsSimilar={filmsSimilar.total} /> */}
 
                 <InfoSection
                     filmFacts={filmFacts}

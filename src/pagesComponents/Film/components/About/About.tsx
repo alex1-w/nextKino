@@ -10,6 +10,8 @@ interface IAbout {
     genres: IGenre[]
 }
 
+const commaSlicer = (array: any) => array.map((item: any) => Object.values(item)).join(', ');
+
 const sliceAge = (age: string | null): string => {
     if (age !== null) {
         return `${age.replace(`age`, ``)}+`
@@ -17,15 +19,33 @@ const sliceAge = (age: string | null): string => {
     return ''
 }
 
+
+
+
 export const About: FC<IAbout> = ({ countries, filmLength, genres, ratingAgeLimits, year, }) => {
 
-    // countries.map(item => {
-    // console.log(item)
-    // })
-    // console.log(countries.map(item => console.log(Object.values(item))));
-    const commaSlicer = (array: any) => {
-        return array.map((item: any) => Object.values(item)).join(', ');
-    }
+    // const aboutArray = [
+    //     {
+    //         title: 'жанр:',
+    //         value: commaSlicer(genres.slice(0, 3))
+    //     },
+    //     {
+    //         title: 'страна:',
+    //         value: commaSlicer(countries.slice(0, 4))
+    //     },
+    //     {
+    //         title: 'год:',
+    //         value: `${year} г.`
+    //     },
+    //     {
+    //         title: 'длительность:',
+    //         value: `${filmLength} мин`
+    //     },
+    //     {
+    //         title: 'возрастной рейтинг:',
+    //         value: `${sliceAge(ratingAgeLimits)}`
+    //     },
+    // ]
 
     return (
         <div className={styles.main}>

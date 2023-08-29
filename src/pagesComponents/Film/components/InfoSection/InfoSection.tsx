@@ -1,10 +1,13 @@
-import { FC, useEffect, useState } from 'react';
 import styles from './InfoSection.module.scss';
+import { FC, useEffect, useState } from 'react';
 import { FactComponent } from './FactComponent/FactComponent';
 import Image from 'next/image';
-import { Award } from './Award/Award';
+import { Award } from './Awards/Award/Award';
 import { IFilmAwards, IFilmFact, IFilmFacts, IFilmImages, IFilmTrailer, IReviews } from '@/types/IFilm';
-import { Comment } from '../Comment/Comment';
+import { Comment } from '../ReviewsBlock/Comment/Comment';
+import Awards from './Awards/Awards';
+import ReviewsBlock from '../ReviewsBlock/ReviewsBlock';
+import FactsAndBloopers from './FactsAndBloopers/FactsAndBloopers';
 
 const pageVariants = [
     {
@@ -42,72 +45,41 @@ interface InfoSection {
 }
 type Variant = "reviews" | "facts" | "photos" | "photo" | "awards" | 'trailer'
 
-export const InfoSection: FC<InfoSection> = ({ filmFacts, filmReviews, filmImages, filmAwards }) => {
+export const InfoSection: FC<InfoSection> = ({ filmFacts, filmReviews, filmImages, filmAwards, filmTrailer }) => {
     const [variant, setVariant] = useState<string | Variant>("reviews")
-    const changeVariant = (variant: string) => setVariant(variant)
 
-    console.log(filmAwards.items);
 
-    const [factsVariant, setFactsVariant] = useState<'FACT' | 'BLOOPER'>('BLOOPER')
+    console.log(filmFacts);
 
+    const variantBlock = {
+        ['reviews']: <ReviewsBlock reviews={filmReviews.items} />,
+        ['awards']: <Awards filmAwards={filmAwards} />,
+        ['facts']: <FactsAndBloopers filmFacts={filmFacts} />
+    }
+    
     return (
         <div className={styles.main}>
             <nav className={styles.navigation}>
                 <ul>
-                    {pageVariants.map(variant => (
-                        <li
-                            key={variant.name}
-                            onClick={() => changeVariant(variant.value)}
-                        >
-                            <p>{variant.name}</p>
-                        </li>
-                    ))}
+                    {
+                        pageVariants.map(variant => (
+                            <li key={variant.name} onClick={() => setVariant(variant.value)}>
+                                <p>{variant.name}</p>
+                            </li>
+                        ))
+                    }
                 </ul>
             </nav>
+            {/* variantBlock[variant as 'awards' | 'reviews'] */}
 
-            {variant === 'reviews' &&
-                <section className={styles.reviewsBlock}>
-                    {filmReviews.items.slice(0, 7).map(review => (
-                        <Comment reviewType={review.type} review={review} key={review.kinopoiskId} />
-                    ))}
-                </section>
-            }
+            {variant === 'reviews' && variantBlock['reviews']}
 
-            {variant === 'facts' &&
+            {variant === 'awards' && variantBlock['awards']}
 
-                <section className={styles.filmFactBlock}>
+            {variant === '' && variantBlock['facts']}
 
-                    <nav className={styles.filmFactBlock__navigation}>
-                        <ul>
-                            <li onClick={() => setFactsVariant('FACT')}>Факты</li>
-                            <li onClick={() => setFactsVariant('BLOOPER')}>Ошибки в фильме</li>
-                        </ul>
-                    </nav>
-                    {/* {filteredFasts.map(fact => ( */}
-                    {factsVariant === 'BLOOPER'
-                        ?
-                        filmFacts.items.filter(item => item.type === 'BLOOPER').map(fact => (
-                            <FactComponent
-                                spoiler={fact.spoiler}
-                                text={fact.text}
-                                type={fact.type}
-                                key={fact.text}
-                            />
-                        ))
-                        :
-                        filmFacts.items.filter(item => item.type === 'FACT').map(fact => (
-                            <FactComponent
-                                spoiler={fact.spoiler}
-                                text={fact.text}
-                                type={fact.type}
-                                key={fact.text}
-                            />))
-                    }
 
-                </section>
-            }
-
-            {variant === 'awards' &&
+            {/* {variant === 'awards' &&
 
                 <section className={styles.awardsBlock}>
                     {filmAwards.items.map(item => (
@@ -122,13 +94,7 @@ export const InfoSection: FC<InfoSection> = ({ filmFacts, filmReviews, filmImage
                         />
                     ))}
                 </section>
-            }
-
-
-            {variant === 'trailer'
-                &&
-                <section></section>
-            }
+            } */}
 
         </div >
     )

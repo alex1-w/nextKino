@@ -25,8 +25,8 @@ export const navLinks = [
         link: `/serials`
     },
     {
-        name: `Актеры`,
-        link: `/actors`
+        name: `Жанры`,
+        link: `/genres`
     }
 ]
 
@@ -59,8 +59,6 @@ export const Header = () => {
     }, [debounceSearchValue])
 
     const escEvent = (e: any) => {
-        // e.preventDefault();
-        // // e.stopPropagation();
         if (e.key === 'Escape') showDropdown.current?.classList.remove(styles.opened)
         if (e.key === 'Enter') window.location.href = `/search`
     }

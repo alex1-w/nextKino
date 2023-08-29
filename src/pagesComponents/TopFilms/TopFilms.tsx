@@ -8,23 +8,24 @@ import { Pagination } from "../../components/Pagination/Pagination";
 // import { determinateNameHelperITopFilm } from "../../helpers/determinateName.helper";
 
 export const TopFilms: FC<{ top: ITop }> = ({ top }) => {
+    console.log(top);
+
 
     return (
-        <>
-            <Header />
-            <section className={styles.filmsBlock}>
-                <h1>Топ фильмов</h1>
-                <div >
+        <main className={styles.filmsBlock}>
+            <h1>Топ фильмов</h1>
+            <div >
 
-                    <ul className={styles.topFilmsGrid}>{
-                        top.films.map(film => (
-                            <FilmItem key={film.filmId} film={film} />
-                        ))}</ul>
+                <ul className={styles.topFilmsGrid}>
+                    {top.films.map(film => (
+                        <FilmItem key={film.filmId} film={film} />
+                    ))}
+                </ul>
 
-                </div>
-                <Pagination totalPages={top.pagesCount} />
-            </section>
-        </>
+            </div>
+
+            <Pagination totalPages={top.pagesCount} />
+        </main>
     )
 
 }

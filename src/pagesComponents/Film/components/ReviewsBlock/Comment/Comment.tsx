@@ -29,6 +29,7 @@ export const Comment: FC<IComment> = ({ review, reviewType }) => {
 
     return (
         <motion.div className={styles.review}>
+
             <div className={styles.review__head}>
                 <div className={styles.review__head__userBlock}>
                     {userIcon}
@@ -38,14 +39,12 @@ export const Comment: FC<IComment> = ({ review, reviewType }) => {
                 <p>{dayjs(review.date).format('YYYY MMMM DD')}</p>
             </div>
 
-            <div
-                className={cn(styles.typeLine, {
-                    [styles.positive]: reviewType === 'POSITIVE',
-                    [styles.negative]: reviewType === 'NEGATIVE',
-                    [styles.neutral]: reviewType === 'NEUTRAL',
-                    [styles.neutral]: reviewType === 'UNKNOWN',
-                })}
-            ></div>
+            <div className={cn(styles.typeLine, {
+                [styles.positive]: reviewType === 'POSITIVE',
+                [styles.negative]: reviewType === 'NEGATIVE',
+                [styles.neutral]: reviewType === 'NEUTRAL',
+                [styles.neutral]: reviewType === 'UNKNOWN',
+            })} />
 
             <motion.div
                 initial={{ WebkitLineClamp: 3 }}
@@ -57,14 +56,12 @@ export const Comment: FC<IComment> = ({ review, reviewType }) => {
                 <p>{review.description}</p>
             </motion.div>
 
-            <div
-                className={styles.arrow}
-                ref={arrowRef}
-            >
+            <div className={styles.arrow} ref={arrowRef}>
                 <button onClick={openFullReview}>
                     {arrowIcon}
                 </button>
             </div>
+            
         </motion.div>
     )
 }
